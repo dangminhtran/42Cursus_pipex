@@ -6,7 +6,7 @@
 /*   By: dangtran <dangtran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:51:26 by dangtran          #+#    #+#             */
-/*   Updated: 2025/02/14 19:11:32 by dangtran         ###   ########.fr       */
+/*   Updated: 2025/02/14 19:38:52 by dangtran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void    ft_pipex_parent(t_pipex *pipex, int i)
     wait(NULL);
 }
 
-// function is called by the main function to create pipes and fork processes
+// function to create pipes and fork processes
 void    ft_pipex(t_pipex *pipex)
 {
     int i;
@@ -60,6 +60,7 @@ void    ft_pipex(t_pipex *pipex)
     i = 0;
     pipex->infile_fd = open(pipex->infile, O_RDONLY);
     if (pipex->infile_fd == -1)
+    // TODO - Remplacer par perror
         ft_error("Error: Failed to open input file\n");
     pipex->outfile_fd = open(pipex->outfile, O_WRONLY | O_CREAT | O_TRUNC, 0644);
     if (pipex->outfile_fd == -1)

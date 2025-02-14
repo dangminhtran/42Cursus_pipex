@@ -6,7 +6,7 @@
 /*   By: dangtran <dangtran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:49:38 by dangtran          #+#    #+#             */
-/*   Updated: 2025/02/14 19:03:10 by dangtran         ###   ########.fr       */
+/*   Updated: 2025/02/14 19:37:28 by dangtran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <stdio.h>
+# include <sys/types.h>
 
 typedef struct s_pipex
 {
@@ -28,12 +29,6 @@ typedef struct s_pipex
     int		outfile_fd;
     int		pipe_fd[2];
 }	t_pipex;
-
-typedef enum e_bool
-{
-    FALSE,
-    TRUE
-}	t_bool;
 
 
 void	ft_error(char *str);
