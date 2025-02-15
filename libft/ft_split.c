@@ -6,7 +6,7 @@
 /*   By: dangtran <dangtran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 10:53:22 by dangtran          #+#    #+#             */
-/*   Updated: 2025/02/14 21:58:39 by dangtran         ###   ########.fr       */
+/*   Updated: 2025/02/15 15:53:38 by dangtran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char	**ft_split(char const *s, char c)
 
 	strs = (char **)malloc(sizeof(char *) * (ft_count_word(s, c) + 1));
 	if (!strs || !s)
-		return (free_pipe(strs, 0));
+		return (free_split(strs, 0));
 	i = 0;
 	while (*s)
 	{
@@ -82,10 +82,10 @@ char	**ft_split(char const *s, char c)
 		{
 			strs[i] = ft_substr(s, 0, word_len);
 			if (!strs[i])
-				return (free_pipe(strs, i));
+				return (free_split(strs, i));
 			i++;
 		}
-		s += word_len;
+	s += word_len;
 	}
 	strs[i] = 0;
 	return (strs);

@@ -6,7 +6,7 @@
 #    By: dangtran <dangtran@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/14 18:51:55 by dangtran          #+#    #+#              #
-#    Updated: 2025/02/14 22:41:58 by dangtran         ###   ########.fr        #
+#    Updated: 2025/02/15 15:42:03 by dangtran         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS_DIR = 	$(addprefix sources/, error.c manage.c pipex.c main.c) $(LIBFT)
 
 SRCS_OBJ = ${SRCS_DIR:.c=.o}
 
-LIBFT = $(addprefix libft/, ft_putstr_fd.c ft_strdup.c)
+LIBFT = $(addprefix libft/, ft_split.c ft_putstr_fd.c ft_strdup.c ft_strlcat.c)
 
 HEADER_DIR=./includes/
 
