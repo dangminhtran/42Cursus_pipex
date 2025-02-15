@@ -6,7 +6,7 @@
 /*   By: dangtran <dangtran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:51:20 by dangtran          #+#    #+#             */
-/*   Updated: 2025/02/15 16:12:58 by dangtran         ###   ########.fr       */
+/*   Updated: 2025/02/15 18:52:18 by dangtran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ int	init_pipe(t_pipex *pipex)
 	return (0);
 }
 
-void	ft_error(char *msg)
+int	ft_error(char *msg)
 {
-	fprintf(stderr, "%s", msg);
-	exit(EXIT_FAILURE);
+	write(2, msg, ft_strlen(msg));
+	exit(1);
 }
 
 void	ft_free(char **str)
@@ -48,6 +48,7 @@ void	ft_free(char **str)
 	free(str);
 }
 
+// TODO - NON USED
 void	free_pipe(t_pipex *pipex)
 {
 	if (pipex->cmd)
@@ -60,7 +61,7 @@ void	free_pipe(t_pipex *pipex)
 		free(pipex->outfile);
 }
 
-char	**ft_split_command(char *cmd)
+/* char	**ft_split_command(char *cmd)
 {
 	char	**args;
 
@@ -68,4 +69,17 @@ char	**ft_split_command(char *cmd)
 	if (!args)
 		ft_error("Error: Memory allocation failed\n");
 	return (args);
+} */
+
+// TODO - A RELIRE
+char    **ft_split_command(char *cmd)
+{
+    char    **args;
+
+    if (!cmd || cmd[0] == '\0')
+        return (NULL);
+    args = ft_split(cmd, ' ');
+    if (!args)
+        return (NULL);
+    return (args);
 }

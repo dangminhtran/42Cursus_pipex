@@ -6,7 +6,7 @@
 /*   By: dangtran <dangtran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 22:39:21 by dangtran          #+#    #+#             */
-/*   Updated: 2025/02/14 22:47:15 by dangtran         ###   ########.fr       */
+/*   Updated: 2025/02/15 16:27:14 by dangtran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,36 +42,48 @@ char	*ft_strdup(const char *src)
 	return (dest);
 }
 
-char *ft_strtok(char *str, const char *delim)
+static char	*ft_strchr(const char *str, int searchedChar)
 {
-    static char *next = NULL;
-    if (str)
-        next = str;
-    
-    if (!next)
-        return NULL;
+	int	i;
 
-    // Skip initial delimiters
-    while (*next && strchr(delim, *next))
-        next++;
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == (char)searchedChar)
+			return ((char *)(str + i));
+		i++;
+	}
+	if (!(char)searchedChar)
+		return ((char *)(str + i));
+	return (NULL);
+}
 
-    if (!*next)
-        return NULL;
+char	*ft_strtok(char *str, const char *delim)
+{
+	static char	*next = NULL;
+	char		*token;
 
-    char *token = next;
-
-    // Find end of token
-    while (*next && !strchr(delim, *next))
-        next++;
-
-    if (*next) {
-        *next = '\0';
-        next++;
-    } else {
-        next = NULL;
-    }
-
-    return token;
+	if (str)
+		next = str;
+	if (!next)
+		return (NULL);
+	while (*next && ft_strchr(delim, *next))
+		next++;
+	if (!*next)
+		return (NULL);
+	token = next;
+	while (*next && !ft_strchr(delim, *next))
+		next++;
+	if (*next)
+	{
+		*next = '\0';
+		next++;
+	}
+	else
+	{
+		next = NULL;
+	}
+	return (token);
 }
 
 int	ft_strncmp(char *str1, char *str2, size_t count)
@@ -89,4 +101,3 @@ int	ft_strncmp(char *str1, char *str2, size_t count)
 	}
 	return ((unsigned char)str1[i] - (unsigned char)str2[i]);
 }
-

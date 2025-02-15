@@ -6,7 +6,7 @@
 /*   By: dangtran <dangtran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 10:53:22 by dangtran          #+#    #+#             */
-/*   Updated: 2025/02/15 15:53:38 by dangtran         ###   ########.fr       */
+/*   Updated: 2025/02/15 16:19:55 by dangtran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ char	**ft_split(char const *s, char c)
 				return (free_split(strs, i));
 			i++;
 		}
-	s += word_len;
+		s += word_len;
 	}
 	strs[i] = 0;
 	return (strs);

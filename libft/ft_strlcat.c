@@ -6,7 +6,7 @@
 /*   By: dangtran <dangtran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 11:58:47 by dangtran          #+#    #+#             */
-/*   Updated: 2025/02/15 15:53:11 by dangtran         ###   ########.fr       */
+/*   Updated: 2025/02/15 16:24:25 by dangtran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		return (size + src_len);
 	while (src[i] && i < size - dest_len - 1)
 	{
-			dest[dest_len + i] = src[i];
-			i++;
+		dest[dest_len + i] = src[i];
+		i++;
 	}
 	dest[dest_len + i] = 0;
 	return (dest_len + src_len);
@@ -50,6 +50,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 		i++;
 	return (i);
 }
+
 char	**free_split(char **strs, int i)
 {
 	while (i > 0)

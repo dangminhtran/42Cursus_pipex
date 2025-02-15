@@ -6,7 +6,7 @@
 /*   By: dangtran <dangtran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:49:38 by dangtran          #+#    #+#             */
-/*   Updated: 2025/02/15 16:06:04 by dangtran         ###   ########.fr       */
+/*   Updated: 2025/02/15 18:18:11 by dangtran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct s_pipex
 
 // MANAGE
 int			init_pipe(t_pipex *pipex);
-void		ft_error(char *str);
+int			ft_error(char *msg);
 void		ft_free(char **str);
 void		free_pipe(t_pipex *pipex);
 char		**ft_split_command(char *cmd);
