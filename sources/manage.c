@@ -6,7 +6,7 @@
 /*   By: dangtran <dangtran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:51:20 by dangtran          #+#    #+#             */
-/*   Updated: 2025/02/15 18:52:18 by dangtran         ###   ########.fr       */
+/*   Updated: 2025/02/19 17:06:09 by dangtran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,38 +48,14 @@ void	ft_free(char **str)
 	free(str);
 }
 
-// TODO - NON USED
-void	free_pipe(t_pipex *pipex)
-{
-	if (pipex->cmd)
-		ft_free(pipex->cmd);
-	if (pipex->env)
-		ft_free(pipex->env);
-	if (pipex->infile)
-		free(pipex->infile);
-	if (pipex->outfile)
-		free(pipex->outfile);
-}
-
-/* char	**ft_split_command(char *cmd)
+char	**ft_split_command(char *cmd)
 {
 	char	**args;
 
+	if (!cmd || cmd[0] == '\0')
+		return (NULL);
 	args = ft_split(cmd, ' ');
 	if (!args)
-		ft_error("Error: Memory allocation failed\n");
+		return (NULL);
 	return (args);
-} */
-
-// TODO - A RELIRE
-char    **ft_split_command(char *cmd)
-{
-    char    **args;
-
-    if (!cmd || cmd[0] == '\0')
-        return (NULL);
-    args = ft_split(cmd, ' ');
-    if (!args)
-        return (NULL);
-    return (args);
 }

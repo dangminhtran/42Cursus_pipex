@@ -6,7 +6,7 @@
 /*   By: dangtran <dangtran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 17:06:47 by dangtran          #+#    #+#             */
-/*   Updated: 2025/02/15 16:27:09 by dangtran         ###   ########.fr       */
+/*   Updated: 2025/02/19 17:30:05 by dangtran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <string.h>
 # include <unistd.h>
 
-void	ft_putstr_fd(char *s, int fd);
 size_t	ft_strlen(const char *str);
 char	*ft_strdup(const char *src);
 char	*ft_strtok(char *str, const char *delim);

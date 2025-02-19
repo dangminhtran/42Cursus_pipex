@@ -6,7 +6,7 @@
 #    By: dangtran <dangtran@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/14 18:51:55 by dangtran          #+#    #+#              #
-#    Updated: 2025/02/15 16:00:28 by dangtran         ###   ########.fr        #
+#    Updated: 2025/02/19 17:30:19 by dangtran         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ CC = cc
 
 CFLAGS= -Wall -Wextra -Werror -I${HEADER_DIR} -g
 
-SRCS_DIR = 	$(addprefix sources/, manage.c pipex.c main.c) $(LIBFT)
+SRCS_DIR = 	$(addprefix sources/, manage.c path.c pipex.c main.c) $(LIBFT)
 
 SRCS_OBJ = ${SRCS_DIR:.c=.o}
 
-LIBFT = $(addprefix libft/, ft_split.c ft_putstr_fd.c ft_strdup.c ft_strlcat.c)
+LIBFT = $(addprefix libft/, ft_split.c ft_strdup.c ft_strlcat.c)
 
 HEADER_DIR=./includes/
 

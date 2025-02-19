@@ -6,7 +6,7 @@
 /*   By: dangtran <dangtran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:49:38 by dangtran          #+#    #+#             */
-/*   Updated: 2025/02/15 18:18:11 by dangtran         ###   ########.fr       */
+/*   Updated: 2025/02/19 17:48:37 by dangtran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,18 @@ typedef struct s_pipex
 int			init_pipe(t_pipex *pipex);
 int			ft_error(char *msg);
 void		ft_free(char **str);
-void		free_pipe(t_pipex *pipex);
 char		**ft_split_command(char *cmd);
 
-// PIPEX
+// PATH
 char		*get_path_from_env(char **env);
+char		*check_command_in_path(char *cmd, char *path);
 char		*find_command_path(char *cmd, char **env);
+
+// PIPEX
+void		execute_command(char *cmd, char **env);
 void		ft_pipex_child(t_pipex *pipex);
 void		ft_pipex_parent(t_pipex *pipex);
+void		create_pipes_and_fork(t_pipex *pipex);
 void		ft_pipex(t_pipex *pipex);
 
 #endif
